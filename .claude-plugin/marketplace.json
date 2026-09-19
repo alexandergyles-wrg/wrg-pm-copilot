@@ -1,0 +1,17 @@
+{
+  "name": "wrg-pm-copilot",
+  "owner": {
+    "name": "Gyles"
+  },
+  "metadata": {
+    "description": "PM Co-Pilot, forked for a multi-client delivery role: a personal operating system for Claude that learns you, tracks clients and their projects, runs a three-pass daily rhythm built around an overnight team handoff, and drafts weekly client status updates.",
+    "version": "0.3.0"
+  },
+  "plugins": [
+    {
+      "name": "pm-copilot",
+      "source": "./plugins/pm-copilot",
+      "description": "Turns Claude into a co-pilot for multi-client delivery work: two morning-brief passes, an end-of-day handoff check, weekly prep, weekly client-status drafts, open loops, and self-improvement, all sweeping every active client and project, not one board. Tool-agnostic in spirit, built against ClickUp, Slack, and Google Chat."
+    }
+  ]
+}
