@@ -22,7 +22,7 @@ Fetch the personal board by status: This week (what's there, done, stale), Inbox
 ## Step 2 - Pull from all sources, across every active project
 Iterate every active client in `memory/engagements.md`, and within each, every active project; skip nothing without saying so. For each project, search its connected sources for new actionable items or signals since last week, using the tools in `memory/day-to-day.md`:
 - **ClickUp:** that project's List/Folder specifically, not just a generic personal view.
-- **Chat / messaging:** whichever tool that project actually uses (Slack or Google Chat, per its entry in `memory/engagements.md`), plus the user's mentions and unanswered DMs anywhere, and messages from VIPs.
+- **Chat / messaging:** Slack, the tool this fork sweeps, per that project's entry in `memory/engagements.md`, plus the user's mentions and unanswered DMs anywhere, and messages from VIPs. Attribute a channel message by its channel, a DM by sender, per CLAUDE.md's rule.
 - **Email:** anything in the inbox tied to that project is a potential task.
 
 If a project turns up nothing new this week, say so in one line rather than omitting it, so a quiet week reads as checked, not skipped.

@@ -53,7 +53,12 @@ This is a fork of PM Co-Pilot built for delivery/PM work across several concurre
 
 **Personal weekly scope is a real ClickUp status, not a tag, and it lives on its own private list.** `memory/day-to-day.md` records that list's ID: a dedicated, private ClickUp list with four statuses, **Inbox** (open type, where morning-brief writes new captures), **This week** (custom, promoted only by your approval), **Backlog** (custom, deferred later), **Archive** (closed type, done or aged out). This list is separate from every project's own delivery-status workflow on purpose: your weekly attention and a project's delivery stage are different things, and writing one should never touch the other.
 
-**Two chat tools, tracked per project.** Some clients use Slack, some use Google Chat. `memory/engagements.md` records which tool each project actually uses, and every sweep checks the right one rather than assuming a single company-wide chat tool.
+**Two chat tools, tracked per project, one live so far.** `memory/engagements.md` records which tool each project actually uses. Slack is live: external project channels, client DMs, and internal team DMs all sweep. Google Chat is deliberately not built yet, the schema already has a place for it (the same `Chat:` field), so turning it on later is adding a second sweep, not a redesign.
+
+**Attributing a DM to a project, since a DM has no channel to match by name.** A channel sweep is straightforward, match the channel name to the project that lists it. A DM isn't, so it's matched by who sent it, using the Slack handles recorded on contacts in `memory/engagements.md`:
+- **A client contact's handle** ties directly to their one project, a client only has one relationship with you at a time even if they run several projects.
+- **An internal team member's handle** gets checked against every active project's Internal team list. On exactly one, that's the match. On more than one (a shared developer, common with a small overnight team), the message content gets checked first, does it name a client, a task, a ClickUp link, anything project-specific. If that resolves it, tag it and note the evidence. If it genuinely doesn't, the skill asks which project rather than guesses, since filing a real risk under the wrong project is worse than one extra question.
+This applies wherever a skill reads chat for DMs: `morning-brief`'s capture step, `end-of-day-check`'s unanswered sweep, and `open-loops`' waiting-on-others check.
 
 ---
 

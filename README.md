@@ -12,7 +12,9 @@ Delivery or PM work at an agency, specifically: several clients running at once,
 
 **A personal board that's a real status, not a tag.** The stock system assumes your task tracker's own status field doubles as your personal weekly triage (Inbox/This Week/Backlog/Archive). This fork's ClickUp reality has a real, already-automated delivery workflow per project (ten stages, QA gates, client-review gates), so personal triage lives on its own dedicated private ClickUp list instead, four statuses, Inbox (open type), This week (custom), Backlog (custom), Archive (closed type). Nothing here ever writes to a project's actual delivery status.
 
-**Two chat tools, tracked per project.** Some clients use Slack, some use Google Chat. `memory/engagements.md` records which one each project actually uses, and every sweep checks the right one.
+**Two chat tools in the schema, one actually built.** `memory/engagements.md` has a place to record which tool each project uses, but only Slack is swept so far, Google Chat is deferred on purpose, adding it later is a second sweep, not a redesign.
+
+**DMs attributed by sender, not channel.** Real ClickUp reality again: internal team communication runs inside each project's ClickUp folder, not chat. Slack carries three separate things instead, external project channels (client-facing), client DMs, and internal-team DMs. A channel matches a project by name; a DM has none, so it's matched by the sender's Slack handle, recorded on each contact. A client contact's handle ties to their one project directly. An internal team member's handle gets checked against every active project's Internal team list, on exactly one, that's the match; on more than one (a shared developer), the message content is checked before asking, and a genuinely ambiguous one gets asked about rather than guessed, since misfiling a real risk under the wrong project is worse than one extra question. Applies wherever a skill reads chat for DMs, `morning-brief`, `end-of-day-check`, and `open-loops` alike.
 
 **ClickUp itself is a capture source, not just where the board lives.** Comments, status changes, and mentions on watched or assigned tasks get swept the same way chat and email do.
 
@@ -49,6 +51,12 @@ Everything else, the routing brain's session protocol, the writing-voice default
 ## Running it
 
 Open a new chat and name the workflow: `morning-brief` (run it at both of your daily times), `end-of-day-check` (once, before the handoff window closes), `weekly-prep` (start of week), `client-update` (per project, only where flagged), `open-loops` (twice a week), `self-improvement` (weekly), `sync` then `consolidate` (every couple of weeks). Same limitation as upstream: Claude's scheduled cloud tasks can't reach local memory yet, so these are run by hand for now.
+
+## Updating this plugin
+
+`self-improvement` can draft a fix or a new skill candidate from inside your own Cowork session, but it has no GitHub access, and it can't reliably edit an installed skill file in place, the next auto-sync would just overwrite that with whatever's still on GitHub. So a skill or command change always ends with a `ready-to-commit` entry in `memory/skill-improvements.md`, not a silently-applied one. A change to a memory file (`role.md`, `voice.md`, `engagements.md`, and so on) is different, those live in your workspace, not the plugin, so self-improvement applies those directly.
+
+To actually ship a skill or command change: bring the `ready-to-commit` diff (or a new idea) to a session with GitHub access, get the real file written and verified, commit it to this repo, and bump the version in both `plugin.json` and `marketplace.json`. A commit alone doesn't trigger an update, the version field is what auto-sync checks.
 
 ## License
 

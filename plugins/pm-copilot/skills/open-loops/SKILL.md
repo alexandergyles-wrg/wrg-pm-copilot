@@ -20,9 +20,9 @@ Two sources feed this section; run both, across every active project.
 
 **ClickUp Question Tracker (structured, primary).** For every active project in `memory/engagements.md` that has a Question Tracker list, pull every item not in a `complete`-type status. This is a direct signal, not an inference: rank HIGH if it's blocking a deliverable or has sat since before the last run, MEDIUM otherwise. No verification step needed, the list itself is the source of truth.
 
-**Chat (inferred).** Find threads where the user sent the last message with a question, request, or mention and no one has responded. Check whichever chat tool each project actually uses, Slack or Google Chat, per `memory/engagements.md`, don't assume one for everything.
+**Chat, Slack for now (inferred).** Find threads where the user sent the last message with a question, request, or mention and no one has responded. Google Chat isn't swept yet, deliberately, see CLAUDE.md.
 - What counts as waiting: the user's message is most recent; it contained a question/request/mention; 24+ hours passed and it isn't clearly resolved; when in doubt, flag it.
-- Search a ~21-day window across every active project's channel(s), the user's other priority channels and key DMs (from `memory/day-to-day.md`), plus any currently active channels. Use each chat tool's search for "messages from the user that end a thread with a question." Tag each result with its client and project.
+- Search a ~21-day window across every active project's channel(s), the user's other priority channels and key DMs (from `memory/day-to-day.md`), plus any currently active channels. Use Slack's search for "messages from the user that end a thread with a question." Tag each result with its client and project: a channel thread by the channel, a DM thread by the counterpart's handle per CLAUDE.md's attribution rule, ask rather than guess when a shared team member matches more than one active project and the thread itself doesn't say which.
 - Verify: read each candidate thread. Discard only if someone replied after the user, or the user explicitly closed it.
 - Rank: HIGH (senior leadership, explicit deadline, 5+ days, or blocking a deliverable); MEDIUM (cross-functional, 2 to 5 days); LOW (exploratory, under 2 days, no blocker).
 

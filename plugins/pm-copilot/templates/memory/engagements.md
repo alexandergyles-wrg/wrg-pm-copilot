@@ -12,7 +12,7 @@ Fill one block per client. Leave a field blank rather than guessing.
 
 ```
 ### <Client name>
-- **Client contacts (all projects):** (name, role, why they're the client-wide contact, e.g. billing or primary relationship)
+- **Client contacts (all projects):** (name, role, Slack handle if reachable via DM, why they're the client-wide contact, e.g. billing or primary relationship)
 - **Relationship notes:** (comms preferences, sensitivities, anything durable that isn't project-specific)
 - **General chat (if any):** (tool + channel, only if there's a client-wide channel separate from per-project ones)
 
@@ -23,10 +23,10 @@ Fill one block per client. Leave a field blank rather than guessing.
   - **Project type:** (adhoc / one-time / mixed) - adhoc has no fixed sprint structure, work arrives as individual requests; one-time is a fixed-scope build running sprint work in lists created fresh per sprint; mixed is a one-time build with adhoc requests also running alongside it.
   - **Active sprint list (one-time/mixed only):** (the current sprint's list name; update this as sprints roll, `client-update` reads whichever list is named here, not Execution Tasks)
   - **Weekly client update:** yes / no (you set this per project; nothing gets swept into this report by inference)
-  - **Chat:** (tool + channel, e.g. Slack #acme-wrg, or Google Chat)
-  - **Email domain (if relevant):**
-  - **Client contacts (this project):** (only if different from, or in addition to, the client-wide contacts above)
-  - **Internal team:** (WRG dev/DM/QA/AM/PC leads staffed on this specific project)
+  - **Chat:** (tool + channel, e.g. Slack #acme-wrg. External project channels and client/team DMs are both Slack for now; Google Chat is deliberately not swept yet, see CLAUDE.md)
+  - **Email domain (if relevant):** (if this project's client contact emails from a different address than your own WRG one and you're forwarding it in, this is still just the domain the mail actually arrives showing, forwarding doesn't change what to match on)
+  - **Client contacts (this project):** (only if different from, or in addition to, the client-wide contacts above; include Slack handle)
+  - **Internal team:** (WRG dev/DM/QA/AM/PC leads staffed on this specific project; include Slack handle for anyone whose updates come through DM rather than the project's ClickUp folder)
   - **Phase:** (discovery / build / QA / launched / support)
   - **One-line context:** (what this project actually is)
   - **Status notes:** (anything a workflow needs that doesn't have its own field: cadence with this client, a pending dependency, etc.)

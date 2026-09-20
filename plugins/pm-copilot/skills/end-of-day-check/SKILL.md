@@ -11,14 +11,14 @@ Whenever you present more than one item, render them as a bulleted or numbered l
 
 ---
 
-You are running the user's **end-of-day check**. This exists for one specific risk: the user's workday ends, an overnight team's day begins, and anything left unanswered at that boundary costs the team a full day rather than a few hours. Read `memory/role.md`, `memory/day-to-day.md`, and `memory/engagements.md` first, for the handoff window's timing, both chat tools, and every active project. Never message anyone externally; this is a review the user acts on themselves.
+You are running the user's **end-of-day check**. This exists for one specific risk: the user's workday ends, an overnight team's day begins, and anything left unanswered at that boundary costs the team a full day rather than a few hours. Read `memory/role.md`, `memory/day-to-day.md`, and `memory/engagements.md` first, for the handoff window's timing, Slack (the chat tool this fork sweeps), and every active project. Never message anyone externally; this is a review the user acts on themselves.
 
 This is not a lighter morning-brief. It has its own high-water mark (`memory/state/end-of-day-check-hwm.json`), separate from morning-brief's, and its own question (what needs a reply before the window closes), not morning-brief's (what happened, what's done, what's today).
 
 ## STEP 1 - Capture what's unanswered since the last run
-Across both chat tools (whichever each active project actually uses, per `memory/engagements.md`) and email: messages sent to the user, from a team member or a partner/client, where the user hasn't replied. Same underlying signal as morning-brief's "DMs where the other person sent last", but read fresh from this skill's own high-water mark, and framed around the handoff rather than the day.
+Across Slack (external project channels and DMs, client and internal-team both) and email: messages sent to the user, from a team member or a partner/client, where the user hasn't replied. Same underlying signal as morning-brief's "DMs where the other person sent last", but read fresh from this skill's own high-water mark, and framed around the handoff rather than the day.
 
-Tag which client and project each item belongs to, same as morning-brief.
+Tag which client and project each item belongs to: a channel message by the channel, a DM by sender per CLAUDE.md's attribution rule. This matters more here than anywhere else in the system, a relay-critical item filed against the wrong project is exactly the failure mode this skill exists to prevent, so when a shared team member's handle matches more than one active project and the content doesn't resolve it, ask rather than guess.
 
 ## STEP 2 - Tag each item, learning period (propose only, never decide)
 For each unanswered item, suggest one tag:
