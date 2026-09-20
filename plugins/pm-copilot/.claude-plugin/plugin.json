@@ -1,6 +1,6 @@
 {
   "name": "pm-copilot",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "A personal operating system for Claude, tuned for delivery/PM work across multiple concurrent clients and projects. Learns who you are, who you work with, and how you like things done, then runs your daily and weekly overhead: two morning-brief passes and an end-of-day handoff check for an overnight team, weekly prep, a weekly client-facing status draft with a separate internal efficiency note, open loops, and self-improvement. Tracks clients and their projects as a two-tier registry, each project typed adhoc/one-time/mixed with the right hours logic for each, a personal ClickUp board with real statuses separate from delivery status, and two chat tools. Forked from Daniel Blum's PM Co-Pilot.",
   "author": {
     "name": "Gyles"

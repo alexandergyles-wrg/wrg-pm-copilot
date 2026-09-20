@@ -5,7 +5,7 @@
   },
   "metadata": {
     "description": "PM Co-Pilot, forked for a multi-client delivery role: a personal operating system for Claude that learns you, tracks clients and their projects, runs a three-pass daily rhythm built around an overnight team handoff, and drafts weekly client status updates.",
-    "version": "0.4.0"
+    "version": "0.4.1"
   },
   "plugins": [
     {
